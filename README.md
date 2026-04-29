@@ -3,6 +3,10 @@ Real Estate Price Predictor
 
 A machine learning web app that predicts property prices based on features like area, location, builder, and property type.
 
+Live App
+ (https://realestate-eda-xpm9nejc9anm7ouvvjzgyk.streamlit.app/)
+ <img width="1911" height="902" alt="image" src="https://github.com/user-attachments/assets/d27f2073-46ee-46dc-a756-08f6e00e8490" />
+
 
 Problem
 
@@ -45,10 +49,6 @@ Price per sqft calculation
 Clean, interactive UI
 Lightweight & deployable model
 
-
- Live App
-
- (https://realestate-eda-xpm9nejc9anm7ouvvjzgyk.streamlit.app/)
 
  Author
 
