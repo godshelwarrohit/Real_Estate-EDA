@@ -58,7 +58,19 @@ body {
 # -----------------------------
 # Load Model
 # -----------------------------
-model = joblib.load("https://drive.google.com/uc?id=1thQlT7tP5Fny0lbgWg1SiwD-AcM6UxWw")
+import os
+import gdown
+import joblib
+
+MODEL_PATH = "real_estate_model.pkl"
+
+# Download if not exists
+if not os.path.exists(MODEL_PATH):
+    url = "https://drive.google.com/uc?id=1thQlT7tP5Fny0lbgWg1SiwD-AcM6UxWw"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+# Load model
+model = joblib.load(MODEL_PATH)
 
 # -----------------------------
 # Header
