@@ -58,7 +58,7 @@ body {
 # -----------------------------
 # Load Model
 # -----------------------------
-model = joblib.load("real_estate_model.pkl")
+model = joblib.load("https://drive.google.com/uc?id=1thQlT7tP5Fny0lbgWg1SiwD-AcM6UxWw")
 
 # -----------------------------
 # Header
