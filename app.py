@@ -2,18 +2,14 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-# -----------------------------
-# Page Config
-# -----------------------------
+
 st.set_page_config(
     page_title="Luxury Real Estate Predictor",
     page_icon="🏠",
     layout="wide"
 )
 
-# -----------------------------
-# Custom Premium Styling
-# -----------------------------
+
 st.markdown("""
 <style>
 body {
@@ -55,39 +51,30 @@ body {
 </style>
 """, unsafe_allow_html=True)
 
-# -----------------------------
-# Load Model
-# -----------------------------
+
 import os
 import gdown
 import joblib
 
 MODEL_PATH = "real_estate_model.pkl"
 
-# Download if not exists
+
 if not os.path.exists(MODEL_PATH):
     url = "https://drive.google.com/uc?id=1thQlT7tP5Fny0lbgWg1SiwD-AcM6UxWw"
     gdown.download(url, MODEL_PATH, quiet=False)
 
-# Load model
+
 model = joblib.load(MODEL_PATH)
 
-# -----------------------------
-# Header
-# -----------------------------
+
 st.markdown('<div class="title">🏠 Luxury Real Estate Valuation</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">AI-powered property pricing for premium decision-making</div>', unsafe_allow_html=True)
 
 st.markdown("---")
 
-# -----------------------------
-# Layout Split
-# -----------------------------
+
 left, right = st.columns([1, 2])
 
-# -----------------------------
-# LEFT PANEL (Inputs)
-# -----------------------------
 with left:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("📋 Property Details")
@@ -107,9 +94,7 @@ with left:
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-# -----------------------------
-# RIGHT PANEL (Results)
-# -----------------------------
+
 with right:
     st.markdown('<div class="card">', unsafe_allow_html=True)
     st.subheader("📊 Valuation Insights")
@@ -138,7 +123,7 @@ with right:
 
         st.markdown("---")
 
-        # Premium Insight Box
+        
         if price_per_sqft > 10000:
             st.markdown("### 🏆 Premium Property")
             st.markdown("This property falls in the **high-value luxury segment**.")
@@ -154,9 +139,6 @@ with right:
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-# -----------------------------
-# Footer
-# -----------------------------
 st.markdown("""
 ---
 <p style='text-align: center; color: gray;'>
